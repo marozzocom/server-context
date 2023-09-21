@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { getServerContext } from "@/app/_components/server-context"
 
 export default function Home() {
+const value = getServerContext()
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -38,6 +41,8 @@ export default function Home() {
           priority
         />
       </div>
+
+      <h1>{value}</h1>
 
       <div className={styles.grid}>
         <a
